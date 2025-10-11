@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+   /* double a = 0;
+    double b = 0;
+    double c = 0;
+    double d = 0;
+    double e = 0;
+    double f = 0;
+    double g = 0;
+    double h = 0;
+    double i = 0;*/
+    
+    double prices[9];
+    int i = 0;
+    for(i = 0; i < 9; ++i){
+        printf("Enter price %d: ", i+1);\
+        scanf("%lf", &prices[i]);
+    }
+    int j = 0;
+    for(j = 0; j < 9; j +=3) {
+        printf("%.2lf %.2lf %.2lf \n", prices[j], prices[j+1], prices[j+2]);
+    }
+    return 0;
+}

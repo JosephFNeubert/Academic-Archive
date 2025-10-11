@@ -1,0 +1,117 @@
+Script started on Tue 19 Mar 2024 02:07:42 PM MST
+[?1034hsh-4.2$ cat 3-19.c
+#include <stdio.h>
+#include <stdlib.h>
+
+/* use rand() to get a random double in given range */
+double getRandomDouble(double lowerBound, double upperBound);
+
+/* assign random doubles to array elements */
+int fillRandom(double* array, int numberToFill,
+	           double lowerLimit, double upperLimit);
+
+/* print array of doubles in a table */ 
+void writeTable(const double* array, int dataSize);
+
+/* print array of doubles to file */ 
+void writeTableToFile(FILE* fp, const double* array, int dataSize);
+
+#define ARRAY_SIZE 200
+#define DATA_SIZE  150 
+#define TABLE_COLS 8 
+
+int main(void) {
+    int length = 0;
+    double myArray[ARRAY_SIZE] = {};
+    
+    /* declare a file pointer variable called fp */
+    FILE* fp = NULL;
+    
+
+    /* open a file called table.txt for writing */
+    fp = fopen("table.txt", "w");
+    
+    
+    if (fp != NULL) {
+        length = fillRandom(myArray, DATA_SIZE, -200.0, 200.0);
+        /* call writeTable function to print the array on the console */
+        writeTable(myArray, length);
+        
+        
+        /* call writeTableToFie function to print the array to the file */
+        writeTableToFile(fp, myArray, length);
+        
+        
+        
+    } else {
+        /* report an appropriate error message */
+        perror("Error");
+    }
+    
+    fclose(fp);    
+    return 0;
+}
+
+int fillRandom(double* array, int numberToFill,
+	           double lowerLimit, double upperLimit) {
+    int i = 0;
+    for (i = 0; i < numberToFill; ++i) {
+        array[i] = getRandomDouble(lowerLimit, upperLimit);
+    }
+    return i;
+}
+
+void writeTable(const double* array, int dataSize) {
+    int i = 0;
+    int j = 0;
+
+    for (i = 0; i < dataSize; i+=8) {
+        for (j = 0; j < 8 && j + i < dataSize; ++j) {
+            printf("%9.3lf", array[i+j]);
+        }
+        printf("\n");
+    }
+}
+
+void writeTableToFile(FILE* fp, const double* array, int dataSize) {
+    int i = 0;
+    int j = 0;
+
+    for (i = 0; i < dataSize; i+=8) {
+        for (j = 0; j < 8 && j + i < dataSize; ++j) {
+            fprintf(fp, "%9.3lf", array[i+j]);
+        }
+        fprintf(fp, "\n");
+    }
+}
+
+double getRandomDouble(double lowerBound, double upperBound) { 
+    double rangeOfReals = upperBound - lowerBound; 
+    double normalizedRand = rand() / (RAND_MAX + 1.0); 
+    return normalizedRand * rangeOfReals + lowerBound; 
+}
+sh-4.2$ gcc -ansi -Wall 3-19.c
+sh-4.2$ a.out
+  136.075  -42.247  113.240  119.376  164.659 -120.979  -65.911  107.292
+  -88.890   21.588   -9.041   51.548  -54.086    5.360  180.892  166.478
+   54.285   86.919 -143.359   42.788 -193.480 -102.845 -145.107  121.671
+ -137.328  -39.622 -148.084 -156.476  199.570 -112.697    5.173  135.645
+   45.056  -81.587   55.021    9.715   -2.567  189.110  -82.993  108.543
+   10.698  107.966  -39.909  156.612  -86.674  -59.017  123.090  167.611
+ -172.098  179.731   10.398 -165.578 -123.114   65.291  156.093  -60.443
+ -174.331 -191.991  -16.919 -174.762 -104.688  188.254  160.883  140.368
+  -93.334   15.904  -49.917  104.099    5.014   67.090   12.643 -184.288
+  -24.945  172.734  172.324   88.381  -86.283   95.414   55.992  -58.381
+   75.145 -133.610  -23.958  152.030  131.680  -67.865 -108.413  157.349
+  -59.856   74.668  182.587   35.456   62.922  143.471  -24.176  169.588
+  -40.625  125.907   73.687  164.389   -7.004 -113.670  180.101  168.051
+ -140.936  152.425   56.432  -27.219   47.839  -87.576  114.401  -77.017
+  -21.187 -109.557 -124.987  -89.506   22.578  -33.399 -132.157  162.722
+ -158.732 -149.570   -1.822  104.190  193.901  174.002   73.778  -46.725
+   99.908  -52.535  -82.336 -107.095   33.795 -102.235 -139.044   92.859
+ -149.810  117.388 -134.359   98.029 -170.188  180.042 -178.988    8.625
+ -129.516 -103.975  119.119   93.062   62.625  186.962
+sh-4.2$ exit
+exit
+
+Script done on Tue 19 Mar 2024 02:08:08 PM MST

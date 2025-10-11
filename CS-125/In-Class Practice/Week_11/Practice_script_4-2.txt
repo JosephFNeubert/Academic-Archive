@@ -1,0 +1,72 @@
+Script started on Tue 02 Apr 2024 02:17:25 PM MST
+[?1034hsh-4.2$ cat Practice_4-2.c
+/* file name: Practice_4-2.c
+   Authors: Jesse Lyszczarz and Joseph Neubert
+   purpose: learning animal sounds
+   sources of help: N/A
+*/
+
+#include <stdio.h>
+
+#define MAXLEN 32
+#define MAX_ANIMALS 10
+
+typedef struct {
+    char name[MAXLEN];
+    char sound[MAXLEN];
+    char food[MAXLEN];
+} Animal;
+
+void getAnimal(Animal* ani) {
+    printf("Enter the name of the animal: ");
+    scanf("%s", (*ani).name);
+    printf("What does a %s eat? ", (*ani).name);
+    scanf("%s", (*ani).food);
+    printf("Enter the sound made by a %s: ", (*ani).name);
+    scanf("%s", (*ani).sound);
+    printf("\n");
+}
+
+void visitAnimal(Animal* ani) {
+    printf("This is a %s. It eats %s and says %s!\n", (*ani).name, (*ani).food, (*ani).sound);
+}
+
+int main() {
+    int number = 0;
+    int i = 0;
+    Animal num[MAX_ANIMALS];
+    printf("How many kinds of animals in the farm?  ");
+    scanf("%d", &number);
+    printf("\n");
+
+    for (i = 0; i < number; ++i) {
+        getAnimal(&num[i]);
+    }
+    i = 0;
+    printf("\nWelcome to our farm.\n");
+    for (i = 0; i < number; ++i) {
+        visitAnimal(&num[i]);
+    }
+
+    return 0;
+}
+sh-4.2$ gcc -ansi -Wall Practice_4-2.c
+sh-4.2$ a.out
+How many kinds of animals in the farm?  2
+
+Enter the name of the animal: cow
+What does a cow eat? hay
+Enter the sound made by a cow: moo
+
+Enter the name of the animal: goose
+What does a goose eat? grain
+Enter the sound made by a goose: honk
+
+
+Welcome to our farm.
+This is a cow. It eats hay and says moo!
+This is a goose. It eats grain and says honk!
+sh-4.2$ exit
+exit
+
+Script done on Tue 02 Apr 2024 02:19:03 PM MST

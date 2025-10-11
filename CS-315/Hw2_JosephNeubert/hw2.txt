@@ -1,0 +1,7 @@
+collect wood 10
+collect gravel 3
+collect iron 22
+use iron 1
+use gravel 2 
+use wood 3
+show_resources

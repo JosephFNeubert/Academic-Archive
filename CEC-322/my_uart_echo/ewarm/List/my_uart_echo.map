@@ -1,0 +1,296 @@
+###############################################################################
+#
+# IAR ELF Linker V7.40.3.8902/W32 for ARM                 19/Sep/2025  09:46:58
+# Copyright 2007-2015 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_uart_echo\ewarm\Exe\my_uart_echo.out
+#    Map file     =  
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_uart_echo\ewarm\List\my_uart_echo.map
+#    Command line =  
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_uart_echo\ewarm\Obj\cfal96x64x16.o
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\driverlib\ewarm\Exe\driverlib.a
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\grlib\ewarm\Exe\grlib.a
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_uart_echo\ewarm\Obj\my_uart_echo.o
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_uart_echo\ewarm\Obj\startup_ewarm.o
+#        --redirect _Printf=_PrintfTiny --redirect _Scanf=_ScanfSmall -o
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_uart_echo\ewarm\Exe\my_uart_echo.out
+#        --map
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_uart_echo\ewarm\List\my_uart_echo.map
+#        --config
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_uart_echo\my_uart_echo.icf
+#        --semihosting --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at start of [0x00000000-0x0003ffff] { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x0003ffff] { ro };
+"P2":  place in [from 0x20000000 to 0x20007fff] { rw, block HEAP };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                      0x26c
+  .intvec            const    0x00000000   0x26c  startup_ewarm.o [1]
+                            - 0x0000026c   0x26c
+
+"P1":                                     0x1ca0
+  .text              ro code  0x0000026c   0x644  my_uart_echo.o [1]
+  .text              ro code  0x000008b0    0xbe  uart.o [4]
+  .text              ro code  0x0000096e     0xa  xsprout.o [3]
+  .text              ro code  0x00000978    0x10  fpu.o [4]
+  .text              ro code  0x00000988   0x2e4  sysctl.o [4]
+  .text              ro code  0x00000c6c   0x168  gpio.o [4]
+  .text              ro code  0x00000dd4   0x3f4  cfal96x64x16.o [1]
+  .text              ro code  0x000011c8    0x78  context.o [5]
+  .text              ro code  0x00001240   0x4ea  string.o [5]
+  .text              ro code  0x0000172a    0xb2  rectangle.o [5]
+  .text              ro code  0x000017dc    0x34  sprintf.o [3]
+  .text              ro code  0x00001810    0x3a  ABImemset48.o [7]
+  .text              ro code  0x0000184a   0x14e  xprintftiny.o [3]
+  .text              ro code  0x00001998    0x36  strlen.o [7]
+  .rodata            const    0x000019d0   0x3c0  fontfixed6x8.o [5]
+  .text              ro code  0x00001d90    0x2c  copy_init3.o [7]
+  .rodata            const    0x00001dbc    0x28  cfal96x64x16.o [1]
+  .text              ro code  0x00001de4    0x28  data_init.o [7]
+  .text              ro code  0x00001e0c    0x22  fpinit_M.o [6]
+  .iar.init_table    const    0x00001e30    0x14  - Linker created -
+  .text              ro code  0x00001e44    0x1a  startup_ewarm.o [1]
+  .text              ro code  0x00001e5e     0xc  cstartup_M.o [7]
+  .text              ro code  0x00001e6c    0x1a  cmain.o [7]
+  .text              ro code  0x00001e86     0x4  low_level_init.o [3]
+  .text              ro code  0x00001e8a     0x4  exit.o [3]
+  .text              ro code  0x00001e90     0xa  cexit.o [7]
+  .text              ro code  0x00001e9c    0x14  exit.o [8]
+  .text              ro code  0x00001eb0     0x8  charmap.o [5]
+  .rodata            const    0x00001eb8     0x0  copy_init3.o [7]
+  Initializer bytes  const    0x00001eb8    0x54  <for P2 s0>
+                            - 0x00001f0c  0x1ca0
+
+"P2":                                      0x254
+  P2 s0                       0x20000000    0x54  <Init block>
+    .data            inited   0x20000000    0x3c  my_uart_echo.o [1]
+    .data            inited   0x2000003c    0x14  cfal96x64x16.o [1]
+    .bss             inited   0x20000050     0x4  context.o [5]
+  .noinit            uninit   0x20000054   0x200  startup_ewarm.o [1]
+                            - 0x20000254   0x254
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Copy (__iar_copy_init3)
+    1 source range, total size 0x54:
+          0x00001eb8  0x54
+    1 destination range, total size 0x54:
+          0x20000000  0x54
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_uart_echo\ewarm\Obj: [1]
+    cfal96x64x16.o      1 012       60       20
+    my_uart_echo.o      1 604       60       60
+    startup_ewarm.o        26      620      512
+    -------------------------------------------
+    Total:              2 642      740      592
+
+command line: [2]
+    -------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                  4
+    low_level_init.o        4
+    sprintf.o              52
+    xprintftiny.o         334
+    xsprout.o              10
+    -------------------------------------------
+    Total:                404
+
+driverlib.a: [4]
+    fpu.o                  16
+    gpio.o                360
+    sysctl.o              740
+    uart.o                190
+    -------------------------------------------
+    Total:              1 306
+
+grlib.a: [5]
+    charmap.o               8
+    context.o             120        4        4
+    fontfixed6x8.o                 960
+    rectangle.o           178
+    string.o            1 258
+    -------------------------------------------
+    Total:              1 564      964        4
+
+m7M_tls.a: [6]
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:                 34
+
+rt7M_tl.a: [7]
+    ABImemset48.o          58
+    cexit.o                10
+    cmain.o                26
+    copy_init3.o           44
+    cstartup_M.o           12
+    data_init.o            40
+    strlen.o               54
+    -------------------------------------------
+    Total:                244
+
+shb_l.a: [8]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    6        4
+    Linker created                  20
+-----------------------------------------------
+    Grand Total:        6 220    1 728      596
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x00001e30          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x00001e44          --   Gb  - Linker created -
+?main                   0x00001e6d         Code  Gb  cmain.o [7]
+CFAL96x64x16ColorTranslate
+                        0x0000105b   0x16  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16Flush       0x00001071    0x2  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16Init        0x00001073  0x118  Code  Gb  cfal96x64x16.o [1]
+CFAL96x64x16LineDrawH   0x00000f55   0x5c  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16LineDrawV   0x00000fb1   0x70  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16PixelDraw   0x00000e4d   0x2e  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16PixelDrawMultiple
+                        0x00000e7b   0xb2  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16RectFill    0x0000102f   0x2c  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16WriteCommand
+                        0x00000dd5   0x32  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16WriteData   0x00000e07   0x30  Code  Lc  cfal96x64x16.o [1]
+FPULazyStackingEnable   0x00000979    0xc  Code  Gb  fpu.o [4]
+FaultISR                0x00001e5b    0x2  Code  Lc  startup_ewarm.o [1]
+GPIODirModeSet          0x00000c6d   0x28  Code  Gb  gpio.o [4]
+GPIOPadConfigSet        0x00000c95   0xfe  Code  Gb  gpio.o [4]
+GPIOPinTypeGPIOOutput   0x00000d9d    0xa  Code  Gb  gpio.o [4]
+GPIOPinTypeUART         0x00000dc1   0x14  Code  Gb  gpio.o [4]
+GPIOPinWrite            0x00000d93    0x6  Code  Gb  gpio.o [4]
+GrContextFontSet        0x00001727    0x4  Code  Gb  string.o [5]
+GrContextInit           0x000011c9   0x5e  Code  Gb  context.o [5]
+GrDefaultStringRenderer
+                        0x000012c1   0xb2  Code  Gb  string.o [5]
+GrFontBaselineGet       0x00001619   0x18  Code  Gb  string.o [5]
+GrFontCodepageGet       0x000016cb   0x1c  Code  Gb  string.o [5]
+GrFontGlyphDataGet      0x00001647   0x84  Code  Gb  string.o [5]
+GrFontGlyphRender       0x000013a3  0x21e  Code  Gb  string.o [5]
+GrFontInfoGet           0x000015ef   0x2a  Code  Gb  string.o [5]
+GrMapISO8859_1_Unicode  0x00001eb1    0x8  Code  Gb  charmap.o [5]
+GrRectFill              0x0000172b   0xb2  Code  Gb  rectangle.o [5]
+GrStringDraw            0x000012ab   0x16  Code  Gb  string.o [5]
+GrStringNextCharGet     0x00001373   0x30  Code  Gb  string.o [5]
+GrStringWidthGet        0x00001241   0x6a  Code  Gb  string.o [5]
+IntDefaultHandler       0x00001e5d    0x2  Code  Lc  startup_ewarm.o [1]
+LEDToggled              0x20000002    0x1  Data  Gb  my_uart_echo.o [1]
+NmiSR                   0x00001e59    0x2  Code  Lc  startup_ewarm.o [1]
+Region$$Table$$Base     0x00001e30          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00001e44          --   Gb  - Linker created -
+ResetISR                0x00001e45    0xe  Code  Gb  startup_ewarm.o [1]
+SysCtlClockGet          0x00000aa5  0x110  Code  Gb  sysctl.o [4]
+SysCtlClockSet          0x000009cd   0xd8  Code  Gb  sysctl.o [4]
+SysCtlDelay             0x000009c5    0x8  Code  Gb  sysctl.o [4]
+SysCtlPeripheralEnable  0x000009a9    0x8  Code  Gb  sysctl.o [4]
+SysCtlPeripheralReady   0x00000989    0x8  Code  Gb  sysctl.o [4]
+UARTCharGetNonBlocking  0x00000949    0xe  Code  Gb  uart.o [4]
+UARTCharPut             0x00000965    0xa  Code  Gb  uart.o [4]
+UARTCharPutNonBlocking  0x00000957    0xe  Code  Gb  uart.o [4]
+UARTCharsAvail          0x00000939    0x6  Code  Gb  uart.o [4]
+UARTConfigSetExpClk     0x000008b1   0x4c  Code  Gb  uart.o [4]
+UARTDisable             0x00000917   0x1e  Code  Gb  uart.o [4]
+UARTEnable              0x000008fd   0x1a  Code  Gb  uart.o [4]
+UARTIntHandler          0x0000026d   0x40  Code  Gb  my_uart_echo.o [1]
+UARTSend                0x000002ad   0x1e  Code  Gb  my_uart_echo.o [1]
+UpdateContextCharMapping
+                        0x000016e7   0x40  Code  Lc  string.o [5]
+_PrintfTiny             0x00001863  0x136  Code  Gb  xprintftiny.o [3]
+_SProut                 0x0000096f    0xa  Code  Gb  xsprout.o [3]
+__aeabi_memset4         0x00001811         Code  Gb  ABImemset48.o [7]
+__aeabi_memset8         0x00001811         Code  Gb  ABImemset48.o [7]
+__cmain                 0x00001e6d         Code  Gb  cmain.o [7]
+__exit                  0x00001e9d   0x14  Code  Gb  exit.o [8]
+__iar_Memset4_word      0x00001819         Code  Gb  ABImemset48.o [7]
+__iar_Memset8_word      0x00001819         Code  Gb  ABImemset48.o [7]
+__iar_copy_init3        0x00001d91   0x2c  Code  Gb  copy_init3.o [7]
+__iar_data_init3        0x00001de5   0x28  Code  Gb  data_init.o [7]
+__iar_init_vfp          0x00001e0d         Code  Gb  fpinit_M.o [6]
+__iar_program_start     0x00001e5f         Code  Gb  cstartup_M.o [7]
+__low_level_init        0x00001e87    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000  0x26c  Data  Gb  startup_ewarm.o [1]
+_call_main              0x00001e79         Code  Gb  cmain.o [7]
+_exit                   0x00001e91         Code  Gb  cexit.o [7]
+_main                   0x00001e83         Code  Gb  cmain.o [7]
+buttonPressToggled      0x20000004    0x1  Data  Gb  my_uart_echo.o [1]
+exit                    0x00001e8b    0x4  Code  Gb  exit.o [3]
+floodToggled            0x20000001    0x1  Data  Gb  my_uart_echo.o [1]
+g_psDefaultCodePointMapTable
+                        0x00001230   0x10  Data  Gb  context.o [5]
+g_psGrLibDefaults       0x20000050    0x4  Data  Lc  context.o [5]
+g_pui32Xtals            0x00000c00   0x6c  Data  Lc  sysctl.o [4]
+g_pui8FontFixed6x8Data  0x000019d0  0x2f8  Data  Lc  fontfixed6x8.o [5]
+g_sCFAL96x64x16         0x00001dbc   0x28  Data  Gb  cfal96x64x16.o [1]
+g_sFontFixed6x8         0x00001cc8   0xc8  Data  Gb  fontfixed6x8.o [5]
+g_ui8DisplayInitCommands
+                        0x2000003c   0x14  Data  Lc  cfal96x64x16.o [1]
+loopCountToggled        0x20000003    0x1  Data  Gb  my_uart_echo.o [1]
+main                    0x000002cb  0x202  Code  Gb  my_uart_echo.o [1]
+out                     0x0000184b   0x18  Code  Lc  xprintftiny.o [3]
+process_menu            0x00000541   0x82  Code  Gb  my_uart_echo.o [1]
+pui32Stack              0x20000054  0x200  Data  Lc  startup_ewarm.o [1]
+running                 0x20000000    0x1  Data  Gb  my_uart_echo.o [1]
+sContext                0x20000010   0x2c  Data  Gb  my_uart_echo.o [1]
+sRect                   0x20000008    0x8  Data  Gb  my_uart_echo.o [1]
+show_button_pressed     0x00000643   0xa2  Code  Gb  my_uart_echo.o [1]
+show_loop_count         0x00000603   0x36  Code  Gb  my_uart_echo.o [1]
+sprintf                 0x000017dd   0x34  Code  Gb  sprintf.o [3]
+strlen                  0x00001999         Code  Gb  strlen.o [7]
+
+
+[1] = C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_uart_echo\ewarm\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = driverlib.a
+[5] = grlib.a
+[6] = m7M_tls.a
+[7] = rt7M_tl.a
+[8] = shb_l.a
+
+  6 220 bytes of readonly  code memory
+  1 728 bytes of readonly  data memory
+    596 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

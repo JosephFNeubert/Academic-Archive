@@ -1,0 +1,46 @@
+/*
+ * File: hw2_JosephNeubert.c
+ * Author: Joseph Neubert
+ * Purpose: Program that outputs results after users enters multiple integers
+ * Date: 1/25/2024
+ * 
+ * Sources of Help: N/A
+*/
+
+#include <stdio.h>
+
+int main()
+ {
+    int current_integer = 0;
+    int integer_count = 0;
+    int positive_count = 0;
+    int negative_count = 0;
+    int sum = 0;
+
+    printf("Enter an integer (or 'q' to quit): ");
+    int scanner = scanf("%d", &current_integer);
+    while (scanner == 1)
+    {
+        ++integer_count;
+        sum += current_integer;
+        
+        if (current_integer > 0)
+        {
+            ++positive_count;
+        }
+        else if (current_integer < 0)
+        {
+            ++negative_count;
+        }
+        
+        printf("Enter an integer (or 'q' to quit): ");
+        scanner = scanf("%d", &current_integer);
+    }
+    
+    printf("You entered %d integers.\n", integer_count);
+    printf("%d of the integers were positive.\n", positive_count);
+    printf("%d of the integers were negative.\n", negative_count);
+    printf("The sum of the %d integers was %d.\n", integer_count, sum);    
+
+    return 0;
+}

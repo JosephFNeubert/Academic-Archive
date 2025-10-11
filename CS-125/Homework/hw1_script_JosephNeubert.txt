@@ -1,0 +1,27 @@
+Script started on Wed 17 Jan 2024 12:17:02 PM MST
+[?1034hsh-4.2$ cat hw1_JosephNeubert.c
+/**********************************************
+File:      hw1_JosephNeubert.c
+Author:    Joseph Neubert
+Purpose:   This program shares interesting facts about me
+**********************************************/
+
+#include <stdio.h>
+
+int main() 
+{
+
+printf("\nGreetings Earthlings.\nI grew up in Phoenix.\nI have knowledge in Java from high school and Python from Riddle, but I have dipped my toe in various languages such as HTML/CSS, JavaScript, and C++.\n");
+return 0;
+
+}
+sh-4.2$ gcc -ansi -Wall hw1_JosephNeubert.c
+sh-4.2$ a.out
+
+Greetings Earthlings.
+I grew up in Phoenix.
+I have knowledge in Java from high school and Python from Riddle, but I have dipped my toe in various languages such as HTML/CSS, JavaScript, and C++.
+sh-4.2$ exit
+exit
+
+Script done on Wed 17 Jan 2024 12:21:35 PM MST

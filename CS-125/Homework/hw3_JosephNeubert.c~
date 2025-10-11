@@ -1,0 +1,21 @@
+/*
+* File: hw3_JosephNeubert.c
+* Author: Joseph Neubert
+* Purpose: 
+* Date: 2/2/2024
+*
+* Sources of Help: N/A
+*/
+
+#include <stdio.h>
+
+int main() 
+{
+    int value = 0;
+    printf("Please enter a value between 1 and 20: ");
+    int valid = scanf("%d", &value);
+    printf("You entered a %d\n", value);
+    
+    return 0;
+}
+

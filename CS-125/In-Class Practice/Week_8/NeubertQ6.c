@@ -1,0 +1,66 @@
+/*
+* File: NeubertQ6.c
+* Author: Joseph Neubert
+* Purpose: Program that takes an array of temperatures and outputs information about it
+* Date: 3/4/2024
+*
+* Sources of Help: N/A
+*/
+
+#include <stdio.h>
+ 
+#define LENGTH 7
+
+int maxTemperature(int* temperatures, int length) {
+    int maxTemp = temperatures[0];
+    int i = 0;
+    for (i = 1; i < length; i++) {
+        if (temperatures[i] > maxTemp) {
+            maxTemp = temperatures[i];
+        }
+    }
+    return maxTemp;
+}
+
+int minTemperature(int* temperatures, int length) {
+    int minTemp = temperatures[0];
+    int i = 0;
+    for (i = 1; i < length; i++) {
+        if (temperatures[i] < minTemp) {
+            minTemp = temperatures[i];
+        }
+    }
+    return minTemp;
+}
+
+int countExceedThreshold(int* temperatures, int length, int threshold) {
+    int count = 0;
+    int i = 0;
+    for (i = 0; i < length; i++) {
+        if (temperatures[i] > threshold) {
+            count++;
+        }
+    }
+    return count;
+}
+
+void printTemperatures(int* temperatures, int length) {
+    printf("Temperatures recorded over the week: ");
+    int i = 0;
+    for (i = 0; i < length; i++) {
+        printf("%d ", temperatures[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int recorded_temps[LENGTH] = {45, 67, 78, 54, 32, 87, 79};
+    int threshold = 0;
+    printf("Enter the temperature threshold: ");
+    scanf("%d", &threshold);
+    printTemperatures(recorded_temps, LENGTH);
+    printf("Maximum temperature recorded over the week: %d\n", maxTemperature(recorded_temps, LENGTH));
+    printf("Minimum temperature recorded over the week: %d\n", minTemperature(recorded_temps, LENGTH));
+    printf("Number of days where temperature exceeded threshold: %d\n", countExceedThreshold(recorded_temps, LENGTH, threshold));
+    return 0;
+}

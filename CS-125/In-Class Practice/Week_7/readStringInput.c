@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+    char animal[20];
+    printf("What is your favorite animal? ");
+    scanf("%s", animal);
+    printf("Your favorite animal is %s\n", animal);
+    return 0;
+}

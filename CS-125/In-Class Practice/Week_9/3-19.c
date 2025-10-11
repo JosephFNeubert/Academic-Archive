@@ -1,0 +1,90 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* use rand() to get a random double in given range */
+double getRandomDouble(double lowerBound, double upperBound);
+
+/* assign random doubles to array elements */
+int fillRandom(double* array, int numberToFill,
+	           double lowerLimit, double upperLimit);
+
+/* print array of doubles in a table */ 
+void writeTable(const double* array, int dataSize);
+
+/* print array of doubles to file */ 
+void writeTableToFile(FILE* fp, const double* array, int dataSize);
+
+#define ARRAY_SIZE 200
+#define DATA_SIZE  150 
+#define TABLE_COLS 8 
+
+int main(void) {
+    int length = 0;
+    double myArray[ARRAY_SIZE] = {};
+    
+    /* declare a file pointer variable called fp */
+    FILE* fp = NULL;
+    
+
+    /* open a file called table.txt for writing */
+    fp = fopen("table.txt", "w");
+    
+    
+    if (fp != NULL) {
+        length = fillRandom(myArray, DATA_SIZE, -200.0, 200.0);
+        /* call writeTable function to print the array on the console */
+        writeTable(myArray, length);
+        
+        
+        /* call writeTableToFie function to print the array to the file */
+        writeTableToFile(fp, myArray, length);
+        
+        
+        
+    } else {
+        /* report an appropriate error message */
+        perror("Error");
+    }
+    
+    fclose(fp);    
+    return 0;
+}
+
+int fillRandom(double* array, int numberToFill,
+	           double lowerLimit, double upperLimit) {
+    int i = 0;
+    for (i = 0; i < numberToFill; ++i) {
+        array[i] = getRandomDouble(lowerLimit, upperLimit);
+    }
+    return i;
+}
+
+void writeTable(const double* array, int dataSize) {
+    int i = 0;
+    int j = 0;
+
+    for (i = 0; i < dataSize; i+=8) {
+        for (j = 0; j < 8 && j + i < dataSize; ++j) {
+            printf("%9.3lf", array[i+j]);
+        }
+        printf("\n");
+    }
+}
+
+void writeTableToFile(FILE* fp, const double* array, int dataSize) {
+    int i = 0;
+    int j = 0;
+
+    for (i = 0; i < dataSize; i+=8) {
+        for (j = 0; j < 8 && j + i < dataSize; ++j) {
+            fprintf(fp, "%9.3lf", array[i+j]);
+        }
+        fprintf(fp, "\n");
+    }
+}
+
+double getRandomDouble(double lowerBound, double upperBound) { 
+    double rangeOfReals = upperBound - lowerBound; 
+    double normalizedRand = rand() / (RAND_MAX + 1.0); 
+    return normalizedRand * rangeOfReals + lowerBound; 
+}

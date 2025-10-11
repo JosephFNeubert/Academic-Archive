@@ -1,0 +1,190 @@
+Script started on Thu 29 Feb 2024 02:23:58 PM MST
+[?1034hsh-4.2$ cat hw5_JosephNeubert.c
+/*
+* File: hw5_JosephNeubert.c
+* Author: Joseph Neubert
+* Purpose: Program that outputs data regarding an array of doubles
+* Date: 3/1/2024
+*
+* Sources of Help: N/A
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/* use rand() to get a random double in given range */
+double getRandomDouble(double lowerBound, double upperBound);
+
+/* assign random doubles to array elements */
+int fillArrayWithRandomValues(double* array, int numberToFill, double lowerLimit, double upperLimit);
+
+/* print the array values one above the other */
+void listArrayValues(double* array, int arrayLength);
+
+/* return the minimum value found in the array */
+double getMinimumArrayValue(double* array, int arrayLength);
+
+/* return the maximum value found in the array */
+double getMaximumArrayValue(double* array, int arrayLength);
+
+/* return the sum of the values in the array */
+double getSumOfArrayValues(double* array, int arrayLength);
+
+/* return the mean of the array, using sumOfArrayValues() to get the sum */
+double getMeanOfArrayValues(double* array, int arrayLength);
+
+#define ARRAY_SIZE 100
+#define DATA_LENGTH 75
+
+int main(void) {
+    double myArray[ARRAY_SIZE];
+    int length = fillArrayWithRandomValues(myArray, DATA_LENGTH, 40.0, 60.0);
+    listArrayValues(myArray, length);
+    printf("The sum of the %d values was %.3f\n", length,
+    getSumOfArrayValues(myArray, length));
+    printf("The smallest was %.3f, and the largest was %.3f\n",
+    getMinimumArrayValue(myArray, length), getMaximumArrayValue(myArray, length));
+    printf("The average of the values was %.3f\n", getMeanOfArrayValues(myArray, length));
+    return 0;
+}
+
+double getRandomDouble(double lowerBound, double upperBound) {
+    double rangeOfReals = upperBound - lowerBound;
+    double normalizedRand = rand() / (RAND_MAX + 1.0);
+    return normalizedRand * rangeOfReals + lowerBound;
+}
+
+int fillArrayWithRandomValues(double* array, int numberToFill, double lowerLimit, double upperLimit) {
+    int i = 0;
+    for (i = 0; i < numberToFill; i++) {
+        array[i] = getRandomDouble(lowerLimit, upperLimit);
+    }
+    return i;
+}
+
+void listArrayValues(double* array, int arrayLength) {
+    int i = 0;
+    for (i = 0; i < arrayLength; i++) {
+        printf("number[%d] is %.3lf\n", i, array[i]);
+    }
+}
+
+double getMinimumArrayValue(double* array, int arrayLength) {
+    double minValue = array[0];
+    int i = 0;
+    for (i = 1; i < arrayLength; i++) {
+        if (array[i] < minValue) {
+            minValue = array[i];
+        }
+    }
+    return minValue;
+}
+
+double getMaximumArrayValue(double* array, int arrayLength) {
+    double maxValue = array[0];
+    int i = 0;
+    for (i = 1; i < arrayLength; i++) {
+        if (array[i] > maxValue) {
+            maxValue = array[i];
+        }
+    }
+    return maxValue;
+}
+
+double getSumOfArrayValues(double* array, int arrayLength) {
+    double sum = 0;
+    int i = 0;
+    for (i = 0; i < arrayLength; i++) {
+        sum += array[i];
+    }
+    return sum;
+}
+
+double getMeanOfArrayValues(double* array, int arrayLength) {
+    double sum = getSumOfArrayValues(array, arrayLength);
+    return sum / arrayLength;
+}
+sh-4.2$ gcc -ansi -Wall hw5_JosephNeubert.c
+sh-4.2$ a.out
+number[0] is 56.804
+number[1] is 47.888
+number[2] is 55.662
+number[3] is 55.969
+number[4] is 58.233
+number[5] is 43.951
+number[6] is 46.704
+number[7] is 55.365
+number[8] is 45.555
+number[9] is 51.079
+number[10] is 49.548
+number[11] is 52.577
+number[12] is 47.296
+number[13] is 50.268
+number[14] is 59.045
+number[15] is 58.324
+number[16] is 52.714
+number[17] is 54.346
+number[18] is 42.832
+number[19] is 52.139
+number[20] is 40.326
+number[21] is 44.858
+number[22] is 42.745
+number[23] is 56.084
+number[24] is 43.134
+number[25] is 48.019
+number[26] is 42.596
+number[27] is 42.176
+number[28] is 59.978
+number[29] is 44.365
+number[30] is 50.259
+number[31] is 56.782
+number[32] is 52.253
+number[33] is 45.921
+number[34] is 52.751
+number[35] is 50.486
+number[36] is 49.872
+number[37] is 59.456
+number[38] is 45.850
+number[39] is 55.427
+number[40] is 50.535
+number[41] is 55.398
+number[42] is 48.005
+number[43] is 57.831
+number[44] is 45.666
+number[45] is 47.049
+number[46] is 56.154
+number[47] is 58.381
+number[48] is 41.395
+number[49] is 58.987
+number[50] is 50.520
+number[51] is 41.721
+number[52] is 43.844
+number[53] is 53.265
+number[54] is 57.805
+number[55] is 46.978
+number[56] is 41.283
+number[57] is 40.400
+number[58] is 49.154
+number[59] is 41.262
+number[60] is 44.766
+number[61] is 59.413
+number[62] is 58.044
+number[63] is 57.018
+number[64] is 45.333
+number[65] is 50.795
+number[66] is 47.504
+number[67] is 55.205
+number[68] is 50.251
+number[69] is 53.354
+number[70] is 50.632
+number[71] is 40.786
+number[72] is 48.753
+number[73] is 58.637
+number[74] is 58.616
+The sum of the 75 values was 3784.375
+The smallest was 40.326, and the largest was 59.978
+The average of the values was 50.458
+sh-4.2$ exit
+exit
+
+Script done on Thu 29 Feb 2024 02:25:24 PM MST

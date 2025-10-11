@@ -1,0 +1,94 @@
+/*
+* File:    hw8_JosephNuebert.c
+* Author:  Joseph Neubert
+* Purpose: Program that outputs information concerning a charcter struct
+* Date:    4/5/2024
+*
+* Sources of Help: N/A
+*/
+
+#include <stdio.h>
+
+#define MAXLEN 32
+#define MAX_CHARA 5
+
+typedef struct {
+    char name[MAXLEN]; 
+    char char_class[MAXLEN];
+    int level;
+    int health;
+    int attack;
+    int defense;
+} Character;
+
+void createCharacter(Character* chara) {
+    printf("Enter the character's name: ");
+    scanf("%s", chara->name);
+    printf("Enter the character's class: ");
+    scanf("%s", chara->char_class);
+    printf("Enter the character's level: ");
+    scanf("%d", &chara->level);
+    printf("Enter the character's health: ");
+    scanf("%d", &chara->health);
+    printf("Enter the character's attack: ");
+    scanf("%d", &chara->attack);
+    printf("Enter the character's defense: ");
+    scanf("%d", &chara->defense);
+}
+
+void displayCharacter(const Character* chara) {
+    printf("Name: %s\n", chara->name);
+    printf("Class: %s\n", chara->char_class);
+    printf("Level: %d\n", chara->level);
+    printf("Health: %d\n", chara->health);
+    printf("Attack: %d\n", chara->attack);
+    printf("Defense: %d\n", chara->defense);
+}
+
+void calculateTotalAttribute(const Character* charas, int numCharas) {
+    int total_health = 0;
+    int total_attack = 0;
+    int total_defense = 0;
+
+    int i = 0;
+    for (i = 0; i < numCharas; ++i) {
+        total_health += charas[i].health;
+        total_attack += charas[i].attack;
+        total_defense += charas[i].defense;
+    }    
+
+    printf("Total Health: %d\n", total_health);
+    printf("Total Attack: %d\n", total_attack);
+    printf("Total Defense: %d\n", total_defense);
+}
+
+int main() {    
+    printf("How many characters do you want to create? ");
+    int numOfChars = 0;
+    scanf("%d", &numOfChars);
+    if (numOfChars > 5 || numOfChars <= 0) {
+        printf("Number must be 5 or less. The number of characters is set to 5.\n");
+        numOfChars = 5;
+    }
+    
+    Character Charas[numOfChars];
+
+    int i = 0;
+    for (i = 0; i < numOfChars; ++i) {
+        printf("\nCharacter %d:\n", i+1);
+        createCharacter(&Charas[i]);
+        printf("\n");
+    }
+    printf("Character creation complete!\n");
+
+    int j = 0;
+    for (j = 0; j < numOfChars; ++j) {
+        printf("\nCharacter %d Information: \n", j+1);
+        displayCharacter(&Charas[j]);
+        printf("\n");
+    }
+    
+    printf("Total attributes for all characters: \n");
+    calculateTotalAttribute(Charas, numOfChars);
+    return 0;
+}

@@ -1,0 +1,14 @@
+collect wood 10
+collect gravel 3
+collect iron 22
+collect wood 2
+collect gravel 1
+collect iron 5
+collect gold 25
+use wood 2
+collect dirt 3
+use dirt 3
+collect sand 10
+use iron 20
+show_resources
+

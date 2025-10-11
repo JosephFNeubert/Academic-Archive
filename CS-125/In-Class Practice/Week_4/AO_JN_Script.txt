@@ -1,0 +1,66 @@
+Script started on Tue 06 Feb 2024 02:20:41 PM MST
+[?1034hsh-4.2$ cat AO_JN.c
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int generateRandomDigit(int smallestInteger, int largestInteger) {
+    int rangeOfIntegers = 1 + largestInteger - smallestInteger;
+    double normalizedRand = rand() / (RAND_MAX + 1.0);
+    return (int) (normalizedRand * rangeOfIntegers) + smallestInteger;
+}
+
+
+void practiceMultiplication(int numbQuestions) {
+    int x = 0;
+    for (x = 1; x <= numbQuestions; ++x) {
+        int num1 = generateRandomDigit(1, 9);
+        int num2 = generateRandomDigit(1, 9);
+        int product = num1 * num2;
+        int userAns = 0;
+        printf("Question %d: What is %d times %d? ", x, num1, num2);
+        scanf("%d", &userAns);
+        while (userAns != product) {
+            printf("Not this time. Please try again.");
+            scanf("%d", &userAns);
+        }
+        printf("Very good!\n");
+    } 
+}
+
+
+int main() {
+    int questions = 0;
+    printf("Let's practice multiplication!\n");
+    printf("How many questions do you want? ");
+    scanf("%d", &questions);
+    
+    practiceMultiplication(questions);
+    printf("Practice session complete. Great job!\n");
+    return 0;
+}
+sh-4.2$ gcc -ansi -Wall AO_JN.c
+sh-4.2$ a.out
+Let's practice multiplication!
+How many questions do you want? 5
+Question 1: What is 8 times 4? 32
+Very good!
+Question 2: What is 8 times 8? 56
+Not this time. Please try again.-2
+Not this time. Please try again.64
+Very good!
+Question 3: What is 9 times 2? 18
+Very good!
+Question 4: What is 4 times 7? 786
+Not this time. Please try again.34
+Not this time. Please try again.12
+Not this time. Please try again.7
+Not this time. Please try again.28
+Very good!
+Question 5: What is 3 times 5? 15
+Very good!
+Practice session complete. Great job!
+sh-4.2$ exit
+exit
+
+Script done on Tue 06 Feb 2024 02:22:56 PM MST

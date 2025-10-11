@@ -1,0 +1,6 @@
+use wool 5
+collect iron 2
+use iron 6
+collect diamond 3
+collect diamond 4
+show_resources

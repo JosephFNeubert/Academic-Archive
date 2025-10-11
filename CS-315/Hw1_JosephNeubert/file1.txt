@@ -1,0 +1,7 @@
+Sue Seller 15.00
+Bob Seller 18.00
+Kim Seller 17.00
+Tim Buyer 1.50
+Lou Buyer 2.00
+Bernie Buyer 1.00
+Ann Buyer 1.75

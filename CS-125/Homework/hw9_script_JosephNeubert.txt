@@ -1,0 +1,91 @@
+Script started on Thu 18 Apr 2024 02:05:55 PM MST
+[?1034hsh-4.2$ cat hw9_JosephNeubert.c
+/*
+* File: hw9_JosephNeubert.c
+* Author: Joseph Neubert
+* Purpose: Program that uses both values and pointers to manipulate integers
+* Date: 4/19/2024
+*
+* Sources of Help: N/A
+*/
+
+#include <stdio.h>
+
+void printXYZ(int x, int y, int z);
+void enterXYZ(int* ptrX, int* ptrY, int* ptrZ);
+void swap(int* a, int* b);
+void xyzAscending(int* px, int* py, int* pz);
+
+int main() {
+    int x = 1;
+    int y = 2;
+    int z = 3;
+
+    printXYZ(x, y, z);
+    enterXYZ(&x, &y, &z);
+    printXYZ(x, y, z);
+    xyzAscending(&x, &y, &z);
+    printXYZ(x, y, z);
+    return 0;
+}
+
+void printXYZ(int x, int y, int z) {
+    printf("x: %d, y: %d, z: %d\n", x, y, z);
+}
+
+void enterXYZ(int* ptrX, int* ptrY, int* ptrZ) {
+    printf("Enter the integer values for X: ");
+    int x_scan = scanf("%d", ptrX);
+    while(x_scan != 1) {
+        printf("Not a valid value. Try again: ");
+        scanf("%*[^\n]");
+        x_scan = scanf("%d", ptrX);
+    }
+    
+    printf("Enter the integer values for Y: ");
+    int y_scan = scanf("%d", ptrY);
+    while(y_scan != 1) {
+        printf("Not a valid value. Try again: ");
+        scanf("%*[^\n]");
+        y_scan = scanf("%d", ptrY);
+    }
+    
+    printf("Enter the integer values for Z: ");
+    int z_scan = scanf("%d", ptrZ);
+    while(z_scan != 1) {
+        printf("Not a valid value. Try again: ");
+        scanf("%*[^\n]");
+        z_scan = scanf("%d", ptrZ);
+    }
+}
+
+void swap(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void xyzAscending(int* px, int* py, int* pz) {
+    if(*px > *py) {
+        swap(px, py);
+    }
+    if(*py > *pz) {
+        swap(py, pz);
+    }
+    if(*px > *py) {
+        swap(px, py);
+    }
+}
+
+sh-4.2$ gcc -ansi -Wall hw9_JosephNeubert.c
+sh-4.2$ a.out
+x: 1, y: 2, z: 3
+Enter the integer values for X: 90
+Enter the integer values for Y: 2
+Enter the integer values for Z: 15
+x: 90, y: 2, z: 15
+x: 2, y: 15, z: 90
+sh-4.2$ exit
+exit
+
+Script done on Thu 18 Apr 2024 02:07:11 PM MST
