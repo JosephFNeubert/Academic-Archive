@@ -12,3 +12,8 @@ The prerequisite class for everything within software engineering. All work was 
 
 # CS-225: Computer Science II
 The class directly after CS-125, and this time we coded in C++. This class includes more advanced concepts such as object-oriented programming (OOP), and it includes a team project where my partner and I programmed a casino game (project is located in a separate repository).
+
+# CS-315: Data Structures and Algorithms
+This class introduced us to ideas of time complexity and a variety of data structures that we experimented with in C. Various demonstrations and examples of ideas learned from data structures and algorithms are included. (WIP)
+
+#
