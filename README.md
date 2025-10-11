@@ -18,3 +18,6 @@ This class introduced us to ideas of time complexity and a variety of data struc
 
 # CS-399: Intermediate Python
 A special class I opted into after CS-118. This class delved more deeply into Python in order to teach us aspects that would be important for real-world development. We learned more about concepts we touched on before in CS-118, and we learned about new, important aspects in development like virtual environments, APIs, and machine learning within Python. 
+
+# CS-420: Operating Systems
+Extra credit assignments I opted to do to improve my knowledge and understanding of operating systems. Each assignment corresponds to a unit we learn and write about regarding OS's and how they function.
