@@ -16,4 +16,5 @@ The class directly after CS-125, and this time we coded in C++. This class inclu
 # CS-315: Data Structures and Algorithms
 This class introduced us to ideas of time complexity and a variety of data structures that we experimented with in C. Various demonstrations and examples of ideas learned from data structures and algorithms are included. (WIP)
 
-#
+# CS-399: Intermediate Python
+A special class I opted into after CS-118. This class delved more deeply into Python in order to teach us aspects that would be important for real-world development. We learned more about concepts we touched on before in CS-118, and we learned about new, important aspects in development like virtual environments, APIs, and machine learning within Python. 
