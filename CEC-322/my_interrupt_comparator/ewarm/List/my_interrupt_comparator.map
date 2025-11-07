@@ -1,0 +1,364 @@
+###############################################################################
+#
+# IAR ELF Linker V7.40.3.8902/W32 for ARM                 04/Nov/2025  12:27:22
+# Copyright 2007-2015 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_interrupt_comparator\ewarm\Exe\my_interrupt_comparator.out
+#    Map file     =  
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_interrupt_comparator\ewarm\List\my_interrupt_comparator.map
+#    Command line =  
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_interrupt_comparator\ewarm\Obj\cfal96x64x16.o
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\driverlib\ewarm\Exe\driverlib.a
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\grlib\ewarm\Exe\grlib.a
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_interrupt_comparator\ewarm\Obj\my_interrupt_comparator.o
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_interrupt_comparator\ewarm\Obj\startup_ewarm.o
+#        --redirect _Printf=_PrintfTiny --redirect _Scanf=_ScanfSmall -o
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_interrupt_comparator\ewarm\Exe\my_interrupt_comparator.out
+#        --map
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_interrupt_comparator\ewarm\List\my_interrupt_comparator.map
+#        --config
+#        C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_interrupt_comparator\my_interrupt_comparator.icf
+#        --semihosting --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at start of [0x00000000-0x0003ffff] { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x0003ffff] { ro };
+"A2":  place at start of [0x20000000-0x20007fff] { section VTABLE };
+"P2":  place in [from 0x20000000 to 0x20007fff] { rw, block HEAP };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                      0x26c
+  .intvec            const    0x00000000   0x26c  startup_ewarm.o [1]
+                            - 0x0000026c   0x26c
+
+"P1":                                     0x25b8
+  .text              ro code  0x0000026c   0x6f8  my_interrupt_comparator.o [1]
+  .text              ro code  0x00000964   0x19c  uart.o [4]
+  .text              ro code  0x00000b00   0x418  gpio.o [4]
+  .text              ro code  0x00000f18    0xb8  interrupt.o [4]
+  .text              ro code  0x00000fd0    0x34  sprintf.o [3]
+  .text              ro code  0x00001004   0x4ea  string.o [5]
+  .text              ro code  0x000014ee    0x4a  comp.o [4]
+  .text              ro code  0x00001538    0x1c  I32ToDbl.o [6]
+  .text              ro code  0x00001554   0x256  DblDiv.o [6]
+  .text              ro code  0x000017aa     0xa  xsprout.o [3]
+  .text              ro code  0x000017b4    0x4c  DblToI32.o [6]
+  .text              ro code  0x00001800   0x2e4  sysctl.o [4]
+  .text              ro code  0x00001ae4   0x3f4  cfal96x64x16.o [1]
+  .text              ro code  0x00001ed8    0x78  context.o [5]
+  .text              ro code  0x00001f50    0xf8  adc.o [4]
+  .text              ro code  0x00002048    0xb2  rectangle.o [5]
+  .text              ro code  0x000020fc    0x10  cpu.o [4]
+  .text              ro code  0x0000210c   0x14e  xprintftiny.o [3]
+  .text              ro code  0x0000225c    0x3a  ABImemset48.o [7]
+  .text              ro code  0x00002298    0x36  strlen.o [7]
+  .rodata            const    0x000022d0   0x3c0  fontfixed6x8.o [5]
+  .text              ro code  0x00002690    0x40  zero_init3.o [7]
+  .text              ro code  0x000026d0    0x2c  copy_init3.o [7]
+  .rodata            const    0x000026fc    0x28  cfal96x64x16.o [1]
+  .text              ro code  0x00002724    0x28  data_init.o [7]
+  .text              ro code  0x0000274c    0x22  fpinit_M.o [6]
+  .iar.init_table    const    0x00002770    0x2c  - Linker created -
+  .text              ro code  0x0000279c    0x1a  startup_ewarm.o [1]
+  .text              ro code  0x000027b6     0xc  cstartup_M.o [7]
+  .text              ro code  0x000027c4    0x1a  cmain.o [7]
+  .text              ro code  0x000027de     0x4  low_level_init.o [3]
+  .text              ro code  0x000027e2     0x4  exit.o [3]
+  .text              ro code  0x000027e8     0xa  cexit.o [7]
+  .text              ro code  0x000027f4    0x14  exit.o [8]
+  .text              ro code  0x00002808     0x8  charmap.o [5]
+  .rodata            const    0x00002810     0x0  zero_init3.o [7]
+  .rodata            const    0x00002810     0x0  copy_init3.o [7]
+  Initializer bytes  const    0x00002810    0x14  <for P2 s0>
+                            - 0x00002824  0x25b8
+
+"A2":                                      0x26c
+  VTABLE             zero     0x20000000   0x26c  interrupt.o [4]
+                            - 0x2000026c   0x26c
+
+"P2":                                      0x468
+  P2 s0                       0x2000026c    0x14  <Init block>
+    .data            inited   0x2000026c    0x14  cfal96x64x16.o [1]
+  .bss               zero     0x20000280    0x50  my_interrupt_comparator.o [1]
+  .bss               zero     0x200002d0     0x4  context.o [5]
+  .noinit            uninit   0x200002d4   0x400  startup_ewarm.o [1]
+                            - 0x200006d4   0x468
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    2 destination ranges, total size 0x2c0:
+          0x20000000  0x26c
+          0x20000280   0x54
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x14:
+          0x00002810   0x14
+    1 destination range, total size 0x14:
+          0x2000026c   0x14
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                     ro code  ro data  rw data
+    ------                     -------  -------  -------
+C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_interrupt_comparator\ewarm\Obj: [1]
+    cfal96x64x16.o               1 012       60       20
+    my_interrupt_comparator.o    1 784                80
+    startup_ewarm.o                 26      620    1 024
+    ----------------------------------------------------
+    Total:                       2 822      680    1 124
+
+command line: [2]
+    ----------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                           4
+    low_level_init.o                 4
+    sprintf.o                       52
+    xprintftiny.o                  334
+    xsprout.o                       10
+    ----------------------------------------------------
+    Total:                         404
+
+driverlib.a: [4]
+    adc.o                          248
+    comp.o                          74
+    cpu.o                           16
+    gpio.o                       1 048
+    interrupt.o                    184               620
+    sysctl.o                       740
+    uart.o                         412
+    ----------------------------------------------------
+    Total:                       2 722               620
+
+grlib.a: [5]
+    charmap.o                        8
+    context.o                      120                 4
+    fontfixed6x8.o                          960
+    rectangle.o                    178
+    string.o                     1 258
+    ----------------------------------------------------
+    Total:                       1 564      960        4
+
+m7M_tls.a: [6]
+    DblDiv.o                       598
+    DblToI32.o                      76
+    I32ToDbl.o                      28
+    fpinit_M.o                      34
+    ----------------------------------------------------
+    Total:                         736
+
+rt7M_tl.a: [7]
+    ABImemset48.o                   58
+    cexit.o                         10
+    cmain.o                         26
+    copy_init3.o                    44
+    cstartup_M.o                    12
+    data_init.o                     40
+    strlen.o                        54
+    zero_init3.o                    64
+    ----------------------------------------------------
+    Total:                         308
+
+shb_l.a: [8]
+    exit.o                          20
+    ----------------------------------------------------
+    Total:                          20
+
+    Gaps                            12        4
+    Linker created                           44
+--------------------------------------------------------
+    Grand Total:                 8 588    1 688    1 748
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x00002770          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x0000279c          --   Gb  - Linker created -
+?main                   0x000027c5         Code  Gb  cmain.o [7]
+ADCSequenceConfigure    0x00001f6b   0x52  Code  Gb  adc.o [4]
+ADCSequenceDisable      0x00001f5b    0x2  Code  Gb  adc.o [4]
+ADCSequenceEnable       0x00001f51    0xa  Code  Gb  adc.o [4]
+ADCSequenceStepConfigure
+                        0x00001fbd   0x76  Code  Gb  adc.o [4]
+CFAL96x64x16ColorTranslate
+                        0x00001d6b   0x16  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16Flush       0x00001d81    0x2  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16Init        0x00001d83  0x118  Code  Gb  cfal96x64x16.o [1]
+CFAL96x64x16LineDrawH   0x00001c65   0x5c  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16LineDrawV   0x00001cc1   0x70  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16PixelDraw   0x00001b5d   0x2e  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16PixelDrawMultiple
+                        0x00001b8b   0xb2  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16RectFill    0x00001d3f   0x2c  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16WriteCommand
+                        0x00001ae5   0x32  Code  Lc  cfal96x64x16.o [1]
+CFAL96x64x16WriteData   0x00001b17   0x30  Code  Lc  cfal96x64x16.o [1]
+CPUcpsid                0x000020fd    0x8  Code  Gb  cpu.o [4]
+CPUcpsie                0x00002105    0x8  Code  Gb  cpu.o [4]
+ComparatorConfigure     0x000014ef    0x8  Code  Gb  comp.o [4]
+ComparatorIntClear      0x0000152f    0xa  Code  Gb  comp.o [4]
+ComparatorIntHandler    0x000003d9   0xbc  Code  Gb  my_interrupt_comparator.o [1]
+ComparatorIntRegister   0x00001507   0x28  Code  Gb  comp.o [4]
+ComparatorValueGet      0x000014f7   0x10  Code  Gb  comp.o [4]
+FaultISR                0x000027b3    0x2  Code  Lc  startup_ewarm.o [1]
+GPIODirModeSet          0x00000b41   0x28  Code  Gb  gpio.o [4]
+GPIOIntClear            0x00000cc9    0x6  Code  Gb  gpio.o [4]
+GPIOIntEnable           0x00000cb3    0x6  Code  Gb  gpio.o [4]
+GPIOIntRegister         0x00000ccf   0x14  Code  Gb  gpio.o [4]
+GPIOIntStatus           0x00000cb9   0x10  Code  Gb  gpio.o [4]
+GPIOIntTypeSet          0x00000b69   0x4c  Code  Gb  gpio.o [4]
+GPIOMIntHandler         0x000002c7   0xe2  Code  Gb  my_interrupt_comparator.o [1]
+GPIOPadConfigSet        0x00000bb5   0xfe  Code  Gb  gpio.o [4]
+GPIOPinRead             0x00000ceb    0x6  Code  Gb  gpio.o [4]
+GPIOPinTypeADC          0x00000cf7    0x4  Code  Gb  gpio.o [4]
+GPIOPinTypeComparator   0x00000cfb    0x2  Code  Gb  gpio.o [4]
+GPIOPinTypeGPIOInput    0x00000d17   0x14  Code  Gb  gpio.o [4]
+GPIOPinTypeGPIOOutput   0x00000d2b    0xa  Code  Gb  gpio.o [4]
+GPIOPinTypeUART         0x00000d4f   0x14  Code  Gb  gpio.o [4]
+GPIOPinWrite            0x00000cf1    0x6  Code  Gb  gpio.o [4]
+GrContextFontSet        0x000014eb    0x4  Code  Gb  string.o [5]
+GrContextInit           0x00001ed9   0x5e  Code  Gb  context.o [5]
+GrDefaultStringRenderer
+                        0x00001085   0xb2  Code  Gb  string.o [5]
+GrFontBaselineGet       0x000013dd   0x18  Code  Gb  string.o [5]
+GrFontCodepageGet       0x0000148f   0x1c  Code  Gb  string.o [5]
+GrFontGlyphDataGet      0x0000140b   0x84  Code  Gb  string.o [5]
+GrFontGlyphRender       0x00001167  0x21e  Code  Gb  string.o [5]
+GrFontInfoGet           0x000013b3   0x2a  Code  Gb  string.o [5]
+GrMapISO8859_1_Unicode  0x00002809    0x8  Code  Gb  charmap.o [5]
+GrRectFill              0x00002049   0xb2  Code  Gb  rectangle.o [5]
+GrStringDraw            0x0000106f   0x16  Code  Gb  string.o [5]
+GrStringNextCharGet     0x00001137   0x30  Code  Gb  string.o [5]
+GrStringWidthGet        0x00001005   0x6a  Code  Gb  string.o [5]
+IntDefaultHandler       0x000027b5    0x2  Code  Lc  startup_ewarm.o [1]
+IntEnable               0x00000f55   0x56  Code  Gb  interrupt.o [4]
+IntMasterDisable        0x00000f21    0x6  Code  Gb  interrupt.o [4]
+IntMasterEnable         0x00000f19    0x8  Code  Gb  interrupt.o [4]
+IntRegister             0x00000f2f   0x26  Code  Gb  interrupt.o [4]
+NmiSR                   0x000027b1    0x2  Code  Lc  startup_ewarm.o [1]
+Region$$Table$$Base     0x00002770          --   Gb  - Linker created -
+Region$$Table$$Limit    0x0000279c          --   Gb  - Linker created -
+ResetISR                0x0000279d    0xe  Code  Gb  startup_ewarm.o [1]
+SysCtlClockGet          0x0000191d  0x110  Code  Gb  sysctl.o [4]
+SysCtlClockSet          0x00001845   0xd8  Code  Gb  sysctl.o [4]
+SysCtlDelay             0x0000183d    0x8  Code  Gb  sysctl.o [4]
+SysCtlPeripheralEnable  0x00001821    0x8  Code  Gb  sysctl.o [4]
+SysCtlPeripheralReady   0x00001801    0x8  Code  Gb  sysctl.o [4]
+UARTCharGetNonBlocking  0x00000a43    0xe  Code  Gb  uart.o [4]
+UARTCharPut             0x00000a51    0xa  Code  Gb  uart.o [4]
+UARTCharsAvail          0x00000a33    0x6  Code  Gb  uart.o [4]
+UARTConfigSetExpClk     0x00000997   0x4c  Code  Gb  uart.o [4]
+UARTDisable             0x000009fd   0x1e  Code  Gb  uart.o [4]
+UARTEnable              0x000009e3   0x1a  Code  Gb  uart.o [4]
+UARTIntClear            0x00000a7b    0x4  Code  Gb  uart.o [4]
+UARTIntEnable           0x00000a75    0x6  Code  Gb  uart.o [4]
+UARTIntHandler          0x0000028b   0x3c  Code  Gb  my_interrupt_comparator.o [1]
+UARTIntRegister         0x00000a5b   0x1a  Code  Gb  uart.o [4]
+UARTSend                0x0000026d   0x1e  Code  Gb  my_interrupt_comparator.o [1]
+UART_send_menu          0x00000891   0x22  Code  Gb  my_interrupt_comparator.o [1]
+UpdateContextCharMapping
+                        0x000014ab   0x40  Code  Lc  string.o [5]
+_GPIOIntNumberGet       0x00000b01   0x40  Code  Lc  gpio.o [4]
+_PrintfTiny             0x00002125  0x136  Code  Gb  xprintftiny.o [3]
+_SProut                 0x000017ab    0xa  Code  Gb  xsprout.o [3]
+_UARTIntNumberGet       0x00000965   0x32  Code  Lc  uart.o [4]
+__aeabi_d2iz            0x000017b5         Code  Gb  DblToI32.o [6]
+__aeabi_ddiv            0x00001555         Code  Gb  DblDiv.o [6]
+__aeabi_memset4         0x0000225d         Code  Gb  ABImemset48.o [7]
+__aeabi_memset8         0x0000225d         Code  Gb  ABImemset48.o [7]
+__aeabi_ui2d            0x00001539         Code  Gb  I32ToDbl.o [6]
+__cmain                 0x000027c5         Code  Gb  cmain.o [7]
+__exit                  0x000027f5   0x14  Code  Gb  exit.o [8]
+__iar_Memset4_word      0x00002265         Code  Gb  ABImemset48.o [7]
+__iar_Memset8_word      0x00002265         Code  Gb  ABImemset48.o [7]
+__iar_copy_init3        0x000026d1   0x2c  Code  Gb  copy_init3.o [7]
+__iar_d2uiz             0x000017e1         Code  Gb  DblToI32.o [6]
+__iar_data_init3        0x00002725   0x28  Code  Gb  data_init.o [7]
+__iar_init_vfp          0x0000274d         Code  Gb  fpinit_M.o [6]
+__iar_program_start     0x000027b7         Code  Gb  cstartup_M.o [7]
+__iar_ui2d              0x0000153d         Code  Gb  I32ToDbl.o [6]
+__iar_zero_init3        0x00002691   0x40  Code  Gb  zero_init3.o [7]
+__low_level_init        0x000027df    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000  0x26c  Data  Gb  startup_ewarm.o [1]
+_call_main              0x000027d1         Code  Gb  cmain.o [7]
+_exit                   0x000027e9         Code  Gb  cexit.o [7]
+_main                   0x000027db         Code  Gb  cmain.o [7]
+buffer                  0x200002c0   0x10  Data  Gb  my_interrupt_comparator.o [1]
+buttonCount             0x200002b8    0x4  Data  Gb  my_interrupt_comparator.o [1]
+exit                    0x000027e3    0x4  Code  Gb  exit.o [3]
+g_pfnRAMVectors         0x20000000  0x26c  Data  Lc  interrupt.o [4]
+g_ppui32GPIOIntMapBlizzard
+                        0x00000d80   0xc0  Data  Lc  gpio.o [4]
+g_ppui32GPIOIntMapSnowflake
+                        0x00000e40   0xd8  Data  Lc  gpio.o [4]
+g_ppui32UARTIntMap      0x00000a80   0x40  Data  Lc  uart.o [4]
+g_ppui32UARTIntMapSnowflake
+                        0x00000ac0   0x40  Data  Lc  uart.o [4]
+g_psDefaultCodePointMapTable
+                        0x00001f40   0x10  Data  Gb  context.o [5]
+g_psGrLibDefaults       0x200002d0    0x4  Data  Lc  context.o [5]
+g_pui32EnRegs           0x00000fbc   0x14  Data  Lc  interrupt.o [4]
+g_pui32Xtals            0x00001a78   0x6c  Data  Lc  sysctl.o [4]
+g_pui8FontFixed6x8Data  0x000022d0  0x2f8  Data  Lc  fontfixed6x8.o [5]
+g_sCFAL96x64x16         0x000026fc   0x28  Data  Gb  cfal96x64x16.o [1]
+g_sContext              0x20000288   0x2c  Data  Gb  my_interrupt_comparator.o [1]
+g_sFontFixed6x8         0x000025c8   0xc8  Data  Gb  fontfixed6x8.o [5]
+g_ui8DisplayInitCommands
+                        0x2000026c   0x14  Data  Lc  cfal96x64x16.o [1]
+main                    0x000004e3  0x1e6  Code  Gb  my_interrupt_comparator.o [1]
+out                     0x0000210d   0x18  Code  Lc  xprintftiny.o [3]
+process_menu            0x000006e1   0x24  Code  Gb  my_interrupt_comparator.o [1]
+pui32Stack              0x200002d4  0x400  Data  Lc  startup_ewarm.o [1]
+sRect                   0x20000280    0x8  Data  Gb  my_interrupt_comparator.o [1]
+show_splash_screen      0x00000705   0xd8  Code  Gb  my_interrupt_comparator.o [1]
+sprintf                 0x00000fd1   0x34  Code  Gb  sprintf.o [3]
+strlen                  0x00002299         Code  Gb  strlen.o [7]
+ui32Loop                0x200002b4    0x4  Data  Gb  my_interrupt_comparator.o [1]
+voltCrossingsCount      0x200002bc    0x4  Data  Gb  my_interrupt_comparator.o [1]
+
+
+[1] = C:\Users\neuberj2\Documents\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\my_interrupt_comparator\ewarm\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = driverlib.a
+[5] = grlib.a
+[6] = m7M_tls.a
+[7] = rt7M_tl.a
+[8] = shb_l.a
+
+  8 588 bytes of readonly  code memory
+  1 688 bytes of readonly  data memory
+  1 748 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
