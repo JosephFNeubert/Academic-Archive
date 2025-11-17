@@ -68,6 +68,7 @@ int main()
     struct Thread *threadList = NULL;
 
     // Process to take user input and populate the thread list
+    printf("Time Quantum is 4.\n");
     printf("Would you like to create a new thread? Type 'y' to confirm. Type any other single character to move to scheduling: ");
     if (!fgets(buffer, sizeof(buffer), stdin))
         return 2;
