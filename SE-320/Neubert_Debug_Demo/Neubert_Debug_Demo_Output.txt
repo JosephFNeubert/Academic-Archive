@@ -1,0 +1,48 @@
+divide: 1
+uninitialized z = 0
+sum = 6
+array total = 32728
+memory result = 10
+calc(5) = 36
+divide: 1
+uninitialized z = 0
+sum = 15
+array total = 32719
+memory result = 10
+calc(5) = 36
+divide: 5
+uninitialized z = 0
+sum = 15
+array total = 32598
+memory result = 10
+calc(5) = 36
+divide: 5
+uninitialized z = 0
+sum = 15
+array total = 32640
+memory result = 10
+calc(5) = 36
+divide: 5
+uninitialized z = 0
+sum = 15
+array total = 6
+memory result = 10
+calc(5) = 36
+[log] x = 5
+[log] y = 10
+divide: 0
+[log] z = 0
+uninitialized z = 0
+sum = 15
+array total = 6
+memory result = 10
+calc(5) = 36
+[log] x = 5
+[log] y = 10
+divide: 0
+[log] z = 0
+uninitialized z = 0
+sum = 15
+array total = 6
+memory result = 10
+calc(5) = 36
