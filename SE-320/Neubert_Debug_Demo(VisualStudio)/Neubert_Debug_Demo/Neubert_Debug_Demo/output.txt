@@ -1,0 +1,37 @@
+Assertion failed: b != 0
+divide: 5
+uninitialized z = 0
+sum = 15
+array total = -858993454
+calc(5) = 36
+Assertion failed: b != 0 && "B cannot be equal to zero"
+divide: 5
+uninitialized z = 0
+sum = 15
+array total = -858993454
+memory result = 10
+calc(5) = 36
+divide: 5
+uninitialized z = 0
+sum = 15
+array total = 6
+memory result = 10
+calc(5) = 36
+[log] x = 5
+[log] y = 10
+divide: 0
+[log] z = 0
+uninitialized z = 0
+sum = 15
+array total = 6
+memory result = 10
+calc(5) = 36
+[log] x = 5
+[log] y = 10
+divide: 0
+[log] z = 0
+uninitialized z = 0
+sum = 15
+array total = 6
+memory result = 10
+calc(5) = 36
