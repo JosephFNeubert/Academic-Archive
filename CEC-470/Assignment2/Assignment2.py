@@ -1,7 +1,7 @@
 """
 CEC-470 Assignment 4
 Author: Joseph Neubert
-Description: Systen endianness (LE) demostration with my PC.
+Description: System endianness (LE) demonstration with my PC.
 """
 
 import sys
